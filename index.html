@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OLEKSANDR AVTOZAPCHASTINI</title>
+
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            color: #00ff2a;
+            background-image: url('43060476-7833-4883-a17b-7c13736c1147-md.jpeg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+
+        main {
+            flex: 1;
+        }
+
+        /* ===== ШАПКА ===== */
+        header {
+            background-image: url('sedan.png');
+            background-size: cover;
+            background-position: center;
+            color: rgb(255, 255, 255);
+            padding: 24px 5vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .header-image {
+            width: 80px;
+            height: 80px;
+            background-size: cover;
+        }
+
+        header .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        header h1 {
+            font-size: clamp(24px, 5vw, 30px);
+            margin: 0 0 6px;
+            white-space: nowrap;
+        }
+
+        header .phone a {
+            color: #4ea1ff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: clamp(16px, 4vw, 20px);
+        }
+
+        /* ===== КОНТЕЙНЕР (ПОДНЯЛИ КАТАЛОГ) ===== */
+        .container {
+            max-width: 3000px;
+            margin: auto;
+            padding: 30px 5vw 60px;
+            /* 🔥 БЫЛО 100px */
+        }
+
+        h2 {
+            font-size: clamp(20px, 4vw, 36px);
+            margin-bottom: 15px;
+              /* ===== (цвет слов каталог запчастей) ===== */ 
+            background-color: rgba(54, 52, 52, 0.26);
+             /* =====  (цвет слов каталог запчастей) ===== */ 
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        /* ===== КАТАЛОГ ===== */
+        .catalog {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        /* ===== КАРТОЧКИ (УКОРОТИЛИ ВЫСОТУ) ===== */
+        .item {
+            background: rgba(0, 0, 0, 0.795);
+            border-radius: 14px;
+            padding: 16px;
+            border: 1px solid #06ffc9;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+            display: flex;
+            flex-direction: column;
+            height: auto;
+            /* 🔥 БЫЛО 100% */
+        }
+
+        .item img {
+            width: 100%;
+            height: 160px;
+            /* 🔥 ОГРАНИЧИЛ ВЫСОТУ */
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-weight: bold;
+            margin-top: auto;
+        }
+
+        /* ===== ФУТЕР ===== */
+        footer {
+            background: rgba(10, 10, 10, 0.726);
+            color: white;
+            padding: 10px 5vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+.footer-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 9px;
+}
+
+.footer-contacts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 17px;
+}
+
+.footer-contacts a {
+    color: #4ea1ff;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.footer-article-link {
+    margin-top: 6px;
+    font-size: 15px;
+    color: #0350e0;
+    text-decoration: underline;
+}
+
+.footer-article-link:hover {
+    color: #4ea1ff;
+}
+
+        @media (max-width: 650px) {
+            .footer-content {
+                flex-direction: column;
+            }
+
+            .contact-group {
+                align-items: center;
+            }
+        }
+        /* ===== АДАПТАЦИЯ ПОД ВСЕ УСТРОЙСТВА ===== */
+
+/* ===== ЖЁСТКАЯ СЕТКА КАТАЛОГА ===== */
+
+/* 📱 Телефоны */
+@media (max-width: 767px) {
+    .catalog {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .item img {
+        height: 130px;
+    }
+}
+
+/* 📲 Планшеты */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .catalog {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .item img {
+        height: 150px;
+    }
+}
+
+/* 🖥️ ПК и ноутбуки */
+@media (min-width: 1025px) {
+    .catalog {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    .item img {
+        height: 160px;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-image" style="background-image: url('car-logo-left.png');"></div>
+
+        <div class="header-content">
+            <h1>OLEKSANDR AVTOZAPCHASTINI</h1>
+            <div class="phone">
+                <a href="tel:+380989016132">📱 +38 (098) 901 61 32</a>
+            </div>
+        </div>
+
+        <div class="header-image" style="background-image: url('car-logo-right.png');"></div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2>Каталог запчастин</h2>
+
+            <div class="catalog">
+                <div class="item">
+                    <img src="tormoz-.jpg">
+                    <h3>Гальмівна система</h3>
+                    <p>Основні елементи гальмівної системи:</p>
+                    <ul>
+                        <li>Гальмівний диск</li>
+                        <li>Направляюча колодок</li>
+                        <li>Супорт</li>
+                        <li>Гальмівні колодки</li>
+                        <li>Циліндр</li>
+                        <li>Поршень</li>
+                        <li>Сигналізатор зносу колодок</li>
+                        <li>Ущільнювальне кільце</li>
+                        <li>Захисний чохол направляючого пальця</li>
+                        <li>Направляючий палець</li>
+                        <li>Захисний кожух</li>
+                    </ul>
+                    <div class="price">Ціна — по телефону</div>
+                </div>
+
+                <div class="item">
+                    <img src="dvigun.jpg">
+                    <h3>Двигун та вихлопна система</h3>
+                    <p>Основні елементи:</p>
+                    <ul>
+                        <li>Повітряний фільтр</li>
+                        <li>Оливний фільтр</li>
+                        <li>Фільтр салону</li>
+                        <li>Прокладка ГБЦ</li>
+                        <li>Комплект прокладок двигуна</li>
+                        <li>Прокладка клапанної кришки</li>
+                        <li>Сальник колінчастого вала</li>
+                        <li>Сальники клапанів</li>
+                        <li>Свічки запалювання</li>
+                        <li>Лямбда-зонд</li>
+                        <li>Ремінь ГРМ (або ланцюг ГРМ)</li>
+                        <li>Натягувач ременя ГРМ</li>
+                        <li>Помпа охолоджуючої рідини</li>
+                        <li>Термостат</li>
+                        <li>Радіатор двигуна</li>
+                        <li>Датчики температури та тиску оливи</li>
+                        <li>Форсунки (інжектори)</li>
+                        <li>Паливний фільтр</li>
+                        <li>Турбокомпресор (якщо двигун турбований)</li>
+                    </ul>
+                    <div class="price">Ціна — по телефону</div>
+                </div>
+
+                <div class="item">
+                    <img src="podveska.jfif">
+                    <h3>Підвіска та кермове управління</h3>
+                    <p>Основні елементи:</p>
+                    <ul>
+                        <li>Втулка стабілізатора</li>
+                        <li>Стійка стабілізатора</li>
+                        <li>Кермова тяга</li>
+                        <li>Наконечник кермової тяги</li>
+                        <li>Сайлентблок важеля</li>
+                        <li>Шарова опора</li>
+                        <li>Кермова рейка</li>
+                        <li>Амортизатори (передні та задні)</li>
+                        <li>Пружини підвіски</li>
+                        <li>Ричаги (важелі) підвіски</li>
+                        <li>Підшипники ступиці колеса</li>
+                        <li>Опори амортизаторів (опорні підшипники)</li>
+                        <li>Стабілізатор поперечної стійкості</li>
+                        <li>Пильники кермової рейки та шарових опор</li>
+                    </ul>
+                    <div class="price">Ціна — по телефону</div>
+                </div>
+
+                <div class="item">
+                    <img src="akkpp-mkpp.jfif">
+                    <h3>Коробка передач (МКПП / АКПП)</h3>
+                    <p>Основні елементи:</p>
+                    <ul>
+                        <li>Первичный вал (МКПП / АКПП)</li>
+                        <li>Вторичный вал (МКПП / АКПП)</li>
+                        <li>Промежуточный вал (МКПП / АКПП)</li>
+                        <li>Шестерни передач (МКПП / АКПП)</li>
+                        <li>Синхронизаторы (МКПП)</li>
+                        <li>Муфты переключения (МКПП / АКПП)</li>
+                        <li>Механизм переключения передач (МКПП / АКПП)</li>
+                        <li>Подшипники (МКПП / АКПП)</li>
+                        <li>Сальники (МКПП / АКПП)</li>
+                        <li>Гидротрансформатор (АКПП)</li>
+                        <li>Планетарные передачи (АКПП)</li>
+                        <li>Фрикционы и ленты (АКПП)</li>
+                    </ul>
+                    <div class="price">Ціна — по телефону</div>
+                </div>
+
+                <div class="item">
+                    <img src="radik.jfif">
+                    <h3>Охолодження та опалення</h3>
+                    <p>Основні елементи:</p>
+                    <ul>
+                        <li>Помпа (водяний насос)</li>
+                        <li>Термостат</li>
+                        <li>Радіатор</li>
+                        <li>Вентилятор охолодження</li>
+                        <li>Компресор кондиціонера</li>
+                        <li>Конденсатор кондиціонера</li>
+                        <li>Випарник кондиціонера</li>
+                        <li>Радіатор опалення</li>
+                        <li>Шланги та патрубки</li>
+                        <li>Датчики температури</li>
+                    </ul>
+                    <div class="price">Ціна — по телефону</div>
+                </div>
+
+                <div class="item">
+                    <img src="fara.jfif">
+                    <h3>Електрика та освітлення</h3>
+                    <p>Основні елементи:</p>
+                    <ul>
+                        <li>Котушка запалювання</li>
+                        <li>Витратомір повітря (датчик MAF)</li>
+                        <li>Генератор</li>
+                        <li>Акумулятор</li>
+                        <li>Стартер</li>
+                        <li>Свічки запалювання</li>
+                        <li>Датчики (температури, положення колінвала, кислородний датчик)</li>
+                        <li>Фари (ближнє, дальнє світло, протитуманні)</li>
+                        <li>Стоп-сигнали</li>
+                        <li>Поворотники</li>
+                        <li>Лампи салону та підсвітки</li>
+                        <li>Реле та запобіжники</li>
+                    </ul>
+                    <div class="price">Ціна — по телефону</div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+    <footer>
+        <div class="header-image" style="background-image: url('social-logo-left.png'); background-size: cover;"></div>
+    
+        <div class="footer-content footer-center">
+    
+            <!-- Контакты по центру -->
+            <div class="footer-contacts">
+                <a href="viber://chat?number=+380989016132">📞 Viber</a>
+                <a href="https://t.me/oleksandr_avtozap">💬 Telegram</a>
+                <a href="tel:+380989016132">📱 +38 (098) 901 61 32</a>
+                <a href="mailto:oleksandr.avtozap@example.com">📧 oleksandr.avtozap@example.com</a>
+            </div>
+    
+            <!-- SEO-ссылка СТРОГО ПОД КОНТАКТАМИ -->
+            <a href="article.html" class="footer-article-link">
+                📝 Автозапчасти в Украине — как выбрать качественные детали
+            </a>
+    
+        </div>
+    
+        <div class="header-image" style="background-image: url('social-logo-right.png'); background-size: cover;"></div>
+    </footer>
+</body>
+
+</html>
